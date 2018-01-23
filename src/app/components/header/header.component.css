@@ -4,10 +4,9 @@
 
 .nav-btn {
     margin-right: 0.5em;
-    background-color: darkgray;
+    background-color: #132584;
 }
 
-.header-bar {
-    background-color: rgba(0, 0, 0, .75);
-    color: white;
+#homeButton {
+    margin-left: 5em;
 }

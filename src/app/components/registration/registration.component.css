@@ -1,0 +1,14 @@
+
+
+mat-card {
+    grid-area: register;
+    align-self: center;
+    padding: 6em;
+    margin-top:2em;
+    background-color: #C5CAE9;
+}
+
+.nav-btn {
+    background-color: #132584;
+    color: white;
+}

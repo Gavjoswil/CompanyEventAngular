@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { EventsService } from '../../services/events.service';
+import { Event } from '../../models/Event';
+import { DataSource } from '@angular/cdk/collections';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+
 
 @Component({
   selector: 'app-events',
@@ -7,9 +13,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
+  columnNames = ['details', 'EventId', 'Title', 'Overview', 'Location', 'DateTime', 'buttons'];
+  dataSource: EventDataSource | null
+
+  constructor(private _eventService: EventsService) { }
 
   ngOnInit() {
+    this._eventService.getEvents().subscribe((events: Event[]) => {
+      this.dataSource = new EventDataSource(events);
+    });
+  }
+}
+
+export class EventDataSource extends DataSource<any> {
+  constructor (private eventsData: Event[]) {
+    super();
   }
 
+  connect(): Observable<Event[]> {
+    return Observable.of(this.eventsData);
+  }
+
+  disconnect() { }
 }

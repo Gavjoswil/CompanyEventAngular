@@ -1,3 +1,56 @@
+<h1>Events!</h1>
+<a mat-raised-button color="primary">Create Event</a>
+<hr>
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <ng-container matColumnDef="details">
+            <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+            <mat-cell *matCellDef="let event"><i class="material-icons">library_books</i></mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="EventId">
+            <mat-header-cell *matHeaderCellDef> Event # </mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.EventId}}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="Title">
+            <mat-header-cell *matHeaderCellDef> Event </mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.Title}}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="Overview">
+            <mat-header-cell *matHeaderCellDef> Overview </mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.Overview}}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="Location">
+            <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.Location}}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="DateTime">
+            <mat-header-cell *matHeaderCellDef> Date and Time </mat-header-cell>
+            <mat-cell *matCellDef="let event">{{event.DateTime}}</mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="buttons">
+            <mat-header-cell *matHeaderCellDef></mat-header-cell>
+            <mat-cell *matCellDef="let event">
+                <i mat-icon class="material-icons">edit</i>
+                <i class="materila-icons">delete</i>
+            </mat-cell>
+        </ng-container>
+    </mat-table>
+</div>
+
+
+
+
+
 <button mat-raised-button class="nav-btn" routerLink="/events/add">Add</button>
 <button mat-raised-button class="nav-btn" routerLink="/events/edit">Edit</button>
 <button mat-raised-button class="nav-btn" routerLink="/events/delete">Delete</button>

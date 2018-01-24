@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { 
   MatToolbarModule, 
   MatButtonModule,
@@ -22,9 +23,13 @@ import { AddeventComponent } from './components/events/addevent/addevent.compone
 import { EditeventComponent } from './components/events/editevent/editevent.component';
 import { DeleteeventComponent } from './components/events/deleteevent/deleteevent.component';
 import { EventdetailsComponent } from './components/events/eventdetails/eventdetails.component';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
+import { EventsService } from './services/events.service';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent},
   { 
     path: 'events', children: [
@@ -47,12 +52,14 @@ const routes = [
     AddeventComponent,
     EditeventComponent,
     DeleteeventComponent,
-    EventdetailsComponent
+    EventdetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatToolbarModule, 
@@ -62,7 +69,10 @@ const routes = [
     MatCardModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    EventsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

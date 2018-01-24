@@ -26,6 +26,7 @@ import { EventdetailsComponent } from './components/events/eventdetails/eventdet
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { EventsService } from './services/events.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 const routes = [
   {path: 'register', component: RegistrationComponent},
@@ -35,9 +36,9 @@ const routes = [
     path: 'events', children: [
       { path: '', component: EventsComponent },
       { path: 'add', component: AddeventComponent},
-      { path: 'edit', component: EditeventComponent},
+      { path: 'edit/:id', component: EditeventComponent},
       { path: 'delete', component: DeleteeventComponent},
-      { path: 'details', component: EventdetailsComponent},
+      { path: 'details/:id', component: EventdetailsComponent},
     ]
   },
 ];
@@ -53,7 +54,8 @@ const routes = [
     EditeventComponent,
     DeleteeventComponent,
     EventdetailsComponent,
-    LoginComponent
+    LoginComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

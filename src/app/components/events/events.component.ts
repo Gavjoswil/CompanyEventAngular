@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../../services/events.service';
-import { Event } from '../../models/Event';
+import { CompanyEvent } from '../../models/CompanyEvent';
 import { DataSource } from '@angular/cdk/collections';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
@@ -19,18 +19,18 @@ export class EventsComponent implements OnInit {
   constructor(private _eventsService: EventsService) { }
 
   ngOnInit() {
-    this._eventsService.getEvents().subscribe((events: Event[]) => {
+    this._eventsService.getEvents().subscribe((events: CompanyEvent[]) => {
       this.dataSource = new EventDataSource(events);
     });
   }
 }
 
 export class EventDataSource extends DataSource<any> {
-  constructor (private eventsData: Event[]) {
+  constructor (private eventsData: CompanyEvent[]) {
     super();
   }
 
-  connect(): Observable<Event[]> {
+  connect(): Observable<CompanyEvent[]> {
     return Observable.of(this.eventsData);
   }
 

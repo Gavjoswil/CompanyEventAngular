@@ -1,4 +1,4 @@
-export interface Event {
+export interface CompanyEvent {
     EventId?: number;
     OwnerId?: number;
     Title: string;

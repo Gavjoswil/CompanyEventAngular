@@ -1,3 +1,30 @@
-<p>
-  addevent works!
-</p>
+<h1>Create an Event.</h1>
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="eventForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Title" formControlName="Title" type="Title" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Overview" formControlName="Overview" type="text" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Location" formControlName="Location" type="text" required>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Date and Time" formControlName="DateTime" type="text" required>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Event!</button>
+</form>
+
+<a mat-button routerLink="events">Back</a>

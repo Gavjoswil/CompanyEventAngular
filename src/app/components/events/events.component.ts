@@ -16,10 +16,10 @@ export class EventsComponent implements OnInit {
   columnNames = ['details', 'EventId', 'Title', 'Overview', 'Location', 'DateTime', 'buttons'];
   dataSource: EventDataSource | null
 
-  constructor(private _eventService: EventsService) { }
+  constructor(private _eventsService: EventsService) { }
 
   ngOnInit() {
-    this._eventService.getEvents().subscribe((events: Event[]) => {
+    this._eventsService.getEvents().subscribe((events: Event[]) => {
       this.dataSource = new EventDataSource(events);
     });
   }

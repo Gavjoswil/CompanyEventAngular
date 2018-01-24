@@ -1,0 +1,18 @@
+.title {
+background-color: lightblue;
+position: relative;
+width: 90%;
+margin: auto;
+}
+
+mat-card {
+    width: 70%;
+    margin: auto;
+}
+#cTitle {
+    margin-left: 2.4em;
+}
+
+.cContent {
+    margin-left: 5em;
+}

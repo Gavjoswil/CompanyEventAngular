@@ -1,4 +1,4 @@
-<h1>Edit a Note</h1>
+<h1>Edit an Event</h1>
 <hr>
 
 <div *ngIf="event">
@@ -8,27 +8,28 @@
         <input matInput placeholder="Event Id" formControlName="EventId" required [value]="event.EventId" type="EventId">
       </mat-form-field>
     </div>
-    <div hidden>
+    <div>
       <mat-form-field>
         <input matInput placeholder="Title" formControlName="Title" required [value]="event.Title" type="Title">
       </mat-form-field>
     </div>
-    <div hidden>
+    <div>
       <mat-form-field>
         <input matInput placeholder="Overview" formControlName="Overview" required [value]="event.Overview" type="Overview">
       </mat-form-field>
     </div>
-    <div hidden>
+    <div>
       <mat-form-field>
         <input matInput placeholder="Location" formControlName="Location" required [value]="event.Location" type="Location">
       </mat-form-field>
     </div>
-    <div hidden>
+    <div>
       <mat-form-field>
         <input matInput placeholder="Date and Time" formControlName="DateTime" required [value]="event.DateTime" type="DateTime">
       </mat-form-field>
     </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
   </form>
 </div>
 
-<a routerLink="/events">Back to Events</a>
+<a mat-button routerLink="/events">Back</a>

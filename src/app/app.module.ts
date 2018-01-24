@@ -37,7 +37,7 @@ const routes = [
       { path: '', component: EventsComponent },
       { path: 'add', component: AddeventComponent},
       { path: 'edit/:id', component: EditeventComponent},
-      { path: 'delete', component: DeleteeventComponent},
+      { path: 'delete/:id', component: DeleteeventComponent},
       { path: 'details/:id', component: EventdetailsComponent},
     ]
   },
